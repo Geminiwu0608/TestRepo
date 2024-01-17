@@ -44,17 +44,44 @@
 
 
   </div>
+
+  <el-tab v-model='activeTab' @Tab-click='handleTabClick'>
+
+    <el-tab-pane v-for='arr in Arrs' label="questionFist" name="questionFist">
+     // 页面1 
+    </el-tab-pane>  
+  </el-tab>
+
 </template>
 
 <script setup>
 // import {ElMessage} from 'element-plus'
 // import { fetchList } from '@/api/brand'
+// import { fetchList } from '@/api/brand'
 import { onMounted, reactive, ref, watch } from "vue";
+
 import TestButton from './TestButton'
 
 const sms = reactive({
   rTitle: '1111111'
 })
+
+const activeTab = true;
+const handleTabClick =()=>{
+// 切换页面，调用接口，拉取数据等操作
+ if(activeTab === currentTab){
+   return
+} else {
+  // 需要实现的操作
+}
+
+}
+
+
+
+
+
+
 
 const childRef = ref('child');
 const test = ref('3333')
@@ -157,7 +184,7 @@ const receiveDataFromChild = (data) => {
 }
 
 .overview-item-value {
-  font-size: 24px;
+  font-size: 24px;  rem
   text-align: center;
 }
 
